@@ -59,13 +59,13 @@ class ExerciseInfoSerializer(serializers.HyperlinkedModelSerializer):
     equipment = serializers.StringRelatedField(many=True)
     muscles_secondary = serializers.StringRelatedField(many=True)
     license = serializers.StringRelatedField()
-    image = ExerciseImageSerializer(many=True, read_only=True, required=False)
+    exerciseimage_set = ExerciseImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Exercise
         fields = ('id', 'license_author', 'license', 'category', 'equipment',
                   'description', 'name', 'name_original', 'muscles', 'muscles_secondary',
-                  'creation_date', 'language', 'uuid', 'image')
+                  'creation_date', 'language', 'uuid', 'exerciseimage_set')
 
 
 class ExerciseCategorySerializer(serializers.ModelSerializer):
