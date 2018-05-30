@@ -90,17 +90,17 @@ INSTALLED_APPS = (
 
 # added list of external libraries to be installed by bower
 BOWER_INSTALLED_APPS = (
-    'jquery#2.1.x',
-    'bootstrap',
+    'bootstrap#3.3.5',
+    'components-font-awesome#4.7.x',
     'd3',
-    'shariff',
-    'tinymce-dist',
     'DataTables',
-    'components-font-awesome',
-    'tinymce',
-    'metrics-graphics',
     'devbridge-autocomplete#1.2.x',
+    'jquery#2.1.x',
+    'metrics-graphics',
+    'shariff#1.24.1',
     'sortablejs#1.4.x',
+    'tinymce',
+    'tinymce-dist',
 )
 
 
