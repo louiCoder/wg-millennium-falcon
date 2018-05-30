@@ -41,20 +41,39 @@ class EquipmentSerializer(serializers.ModelSerializer):
         model = Equipment
 
 
-class ExerciseCategorySerializer(serializers.ModelSerializer):
-    '''
-    ExerciseCategory serializer
-    '''
-    class Meta:
-        model = ExerciseCategory
-
-
 class ExerciseImageSerializer(serializers.ModelSerializer):
     '''
     ExerciseImage serializer
     '''
     class Meta:
         model = ExerciseImage
+
+
+class ExerciseInfoSerializer(serializers.HyperlinkedModelSerializer):
+    '''
+    Exercise info serialiser
+    '''
+    muscles = serializers.StringRelatedField(many=True)
+    language = serializers.StringRelatedField(many=False)
+    category = serializers.StringRelatedField()
+    equipment = serializers.StringRelatedField(many=True)
+    muscles_secondary = serializers.StringRelatedField(many=True)
+    license = serializers.StringRelatedField()
+    image = ExerciseImageSerializer(many=True, read_only=True, required=False)
+
+    class Meta:
+        model = Exercise
+        fields = ('id', 'license_author', 'license', 'category', 'equipment',
+                  'description', 'name', 'name_original', 'muscles', 'muscles_secondary',
+                  'creation_date', 'language', 'uuid', 'image')
+
+
+class ExerciseCategorySerializer(serializers.ModelSerializer):
+    '''
+    ExerciseCategory serializer
+    '''
+    class Meta:
+        model = ExerciseCategory
 
 
 class ExerciseCommentSerializer(serializers.ModelSerializer):
