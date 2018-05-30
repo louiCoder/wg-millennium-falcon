@@ -26,6 +26,11 @@ jobs:
             . venv/bin/activate
             invoke create-settings --database-type postgresql
       - run:
+          name: test flake8
+          command: |
+            . venv/bin/activate
+            flake8 --config setup.cfg wger
+      - run:
           name: run tests
           command: |
             . venv/bin/activate
