@@ -28,7 +28,9 @@ from wger.exercises.models import (
     Muscle,
     ExerciseCategory,
 )
+from django.test import Client
 from wger.utils.cache import get_template_cache_name, cache_mapper
+from rest_framework.test import APIClient, APITestCase
 
 
 class ExerciseRepresentationTestCase(WorkoutManagerTestCase):
@@ -531,3 +533,38 @@ class WorkoutCacheTestCase(WorkoutManagerTestCase):
 #             ],
 #             "name": "foobar",
 #             "status": "5"}
+
+class ExerciseApiTest(APITestCase):
+
+    def test_get_exercise_info_api_end_point(self):
+        # factory = APIRequestFactory()
+        client = APIClient()
+        response = client.get('/api/v2/exerciseinfo/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_readonly_endpoint_constraint(self):
+        client = APIClient()
+        data = {
+            "id": 55,
+            "license_author": "wger.de",
+            "status": "2",
+            "description": "<p>.</p>",
+            "name": "Ausfallschritte stehend",
+            "name_original": "",
+            "creation_date": "",
+            "uuid": "27301836-ed7f-4510-83e7-66c0b8041a44",
+            "license": 1,
+            "category": 9,
+            "language": 1,
+            "muscles": [
+                8,
+                10
+            ],
+            "muscles_secondary": [],
+            "equipment": [
+                3
+            ]
+        }
+        response = client.post('/api/v2/exerciseinfo/', data=data)
+        # Test for method not allowed
+        self.assertEqual(response.status_code, 405)

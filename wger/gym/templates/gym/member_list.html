@@ -14,9 +14,6 @@
 
 
 {% block content %}
-{% if perms.gym.manage_gym or perms.gym.gym_trainer %}
-    {% include 'gym/partial_user_list.html' %}
-{% endif %}
 
 
 <h4>{% trans "Administrators and trainers" %}</h4>
@@ -71,6 +68,11 @@
 {% endfor %}
 </tbody>
 </table>
+
+{% if perms.gym.manage_gym or perms.gym.gym_trainer %}
+    {% include 'gym/partial_user_list.html' %}
+{% endif %}
+
 {% endblock %}
 
 

@@ -32,7 +32,8 @@ from wger.exercises.api.serializers import (
     ExerciseImageSerializer,
     ExerciseCategorySerializer,
     EquipmentSerializer,
-    ExerciseCommentSerializer
+    ExerciseCommentSerializer,
+    ExerciseInfoSerializer
 )
 from wger.exercises.models import (
     Exercise,
@@ -121,6 +122,14 @@ def search(request):
         json_response['suggestions'] = results
 
     return Response(json_response)
+
+
+class ExerciseInfoViewSet(viewsets.ReadOnlyModelViewSet):
+    '''
+    API endpoint for showing all exercise info
+    '''
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseInfoSerializer
 
 
 class EquipmentViewSet(viewsets.ReadOnlyModelViewSet):
