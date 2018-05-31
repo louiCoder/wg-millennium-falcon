@@ -7,48 +7,156 @@
 $(document).ready( function () {
     /* Make table sortable */
     $('#main_member_list').DataTable({
-        paging: false,
+        pageLength: 7,
+        bFilter: true,
+        bInfo : false
+    });
+
+    $('#inactive_member_list').DataTable({
+        pageLength: 7,
         bFilter: true,
         bInfo : false
     });
 });
 </script>
 
-<table class="table table-hover" id="main_member_list">
-<thead>
-<tr>
-    {% for key in user_table.keys %}
-        <th>{{ key }}</th>
-    {% endfor %}
-</tr>
-</thead>
-<tbody>
-{% for current_user in user_table.users %}
-<tr>
-    <td>
-        {{current_user.obj.pk}}
-    </td>
-    <td>
-        <a href="{% url 'core:user:overview' current_user.obj.pk %}">{{current_user.obj}}</a>
-    </td>
-    <td>
-        {{current_user.obj.get_full_name}}
-    </td>
-    <td data-order="{{current_user.last_log|date:'U'}}">
-        {{current_user.last_log|default:'-/-'}}
-    </td>
-    {% if show_gym %}
-    <td>
-        {% if current_user.obj.userprofile.gym_id %}
-            <a href="{{ current_user.obj.userprofile.gym.get_absolute_url }}">
-            {{ current_user.obj.userprofile.gym }}
-            </a>
-        {% else %}
-            -/-
+<script>
+    function openUsers(evt, userType) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(userType).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<style>
+    .nav-tabs {
+        overflow: hidden;
+    }
+
+    .nav-tabs button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    .nav-tabs button:hover {
+        background-color: #ddd;
+    }
+
+    .nav-tabs button.active {
+        background-color: #ccc;
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border-top: none;
+    }
+</style>
+
+<div class="nav nav-tabs">
+    <button class="tablinks" onclick="openUsers(event, 'Active')">Active</button>
+    <button class="tablinks" onclick="openUsers(event, 'Inactive')">Inactive</button>
+</div>
+  
+<div id="Active" class="tabcontent">
+    <table class="table table-hover" id="main_member_list">
+        <thead>
+        <tr>
+            {% for key in user_table.keys %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for current_user in user_table.users %}
+        
+        {% if current_user.obj.is_active %}
+        <tr>
+            <td>
+                {{current_user.obj.pk}}
+            </td>
+            <td>
+                <a href="{% url 'core:user:overview' current_user.obj.pk %}">{{current_user.obj}}</a>
+            </td>
+            <td>
+                {{current_user.obj.get_full_name}}
+            </td>
+            <td data-order="{{current_user.last_log|date:'U'}}">
+                {{current_user.last_log|default:'-/-'}}
+            </td>
+            {% if show_gym %}
+            <td>
+                {% if current_user.obj.userprofile.gym_id %}
+                    <a href="{{ current_user.obj.userprofile.gym.get_absolute_url }}">
+                    {{ current_user.obj.userprofile.gym }}
+                    </a>
+                {% else %}
+                    -/-
+                {% endif %}
+            </td>
+            {% endif %}
+        </tr>
         {% endif %}
-    </td>
-    {% endif %}
-</tr>
-{% endfor %}
-</tbody>
-</table>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+  
+<div id="Inactive" class="tabcontent">
+    <table class="table table-hover" id="inactive_member_list">
+        <thead>
+        <tr>
+            {% for key in user_table.keys %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for current_user in user_table.users %}
+        
+        {% if not current_user.obj.is_active %}
+        <tr>
+            <td>
+                {{current_user.obj.pk}}
+            </td>
+            <td>
+                <a href="{% url 'core:user:overview' current_user.obj.pk %}">{{current_user.obj}}</a>
+            </td>
+            <td>
+                {{current_user.obj.get_full_name}}
+            </td>
+            <td data-order="{{current_user.last_log|date:'U'}}">
+                {{current_user.last_log|default:'-/-'}}
+            </td>
+            {% if show_gym %}
+            <td>
+                {% if current_user.obj.userprofile.gym_id %}
+                    <a href="{{ current_user.obj.userprofile.gym.get_absolute_url }}">
+                    {{ current_user.obj.userprofile.gym }}
+                    </a>
+                {% else %}
+                    -/-
+                {% endif %}
+            </td>
+            {% endif %}
+        </tr>
+        {% endif %}
+        
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
