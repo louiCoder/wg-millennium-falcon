@@ -86,6 +86,19 @@ INSTALLED_APPS = (
 
     # django-bower for installing bower packages
     'djangobower',
+
+    # for social logins
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # Providers supported
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
+
+    # django extensions
+    'django_extensions'
 )
 
 # added list of external libraries to be installed by bower
@@ -128,10 +141,12 @@ MIDDLEWARE_CLASSES = (
     'django_mobile.middleware.SetFlavourMiddleware',
 )
 
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'wger.utils.helpers.EmailAuthBackend'
-)
+    'wger.utils.helpers.EmailAuthBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 TEMPLATES = [
     {

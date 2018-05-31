@@ -205,5 +205,7 @@ urlpatterns = [
     url(r'^user/', include(patterns_user, namespace="user")),
     url(r'^license/', include(patterns_license, namespace="license")),
     url(r'^repetition-unit/', include(patterns_repetition_units, namespace="repetition-unit")),
-    url(r'^weight-unit/', include(patterns_weight_units, namespace="weight-unit")),
+    url(r'^weight-unit/', include(patterns_weight_units, namespace="weight-unit"))
+
+
 ]
