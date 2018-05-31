@@ -181,7 +181,8 @@ class Exercise(AbstractSubmissionModel, AbstractLicenseModel, models.Model):
 
     muscles = models.ManyToManyField(Muscle,
                                      blank=True,
-                                     verbose_name=_('Primary muscles'))
+                                     verbose_name=_('Primary muscles'),
+                                     )
     '''Main muscles trained by the exercise'''
 
     muscles_secondary = models.ManyToManyField(Muscle,
@@ -428,10 +429,10 @@ class ExerciseImage(AbstractSubmissionModel, AbstractLicenseModel, models.Model)
                 .filter(is_main=False) \
                 .count():
 
-            image = ExerciseImage.objects.accepted() \
-                .filter(exercise=self.exercise, is_main=False)[0]
-            image.is_main = True
-            image.save()
+                image = ExerciseImage.objects.accepted() \
+                    .filter(exercise=self.exercise, is_main=False)[0]
+                image.is_main = True
+                image.save()
 
     def get_owner_object(self):
         '''
