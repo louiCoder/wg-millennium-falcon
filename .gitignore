@@ -57,6 +57,7 @@ docs/_build/
 target/
 
 # IDE
+.vscode
 .idea/
 
 # External Libraries 
