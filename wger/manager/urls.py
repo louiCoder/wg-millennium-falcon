@@ -19,6 +19,7 @@ from django.conf.urls import patterns, url, include
 from django.contrib.auth.decorators import login_required
 
 from wger.manager.views import (
+    json,
     pdf,
     schedule,
     schedule_step,
@@ -112,6 +113,9 @@ patterns_workout = [
     url(r'^(?P<day_pk>\d+)/timer$',
         workout.timer,
         name='timer'),
+    url(r'^(?P<id>\d+)/json/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$',
+        json.workout_log,
+        name='json-data'), #JS!
 ]
 
 
