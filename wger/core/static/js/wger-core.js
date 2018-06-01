@@ -666,6 +666,28 @@ $(document).ready(function () {
     window.location.href = targetUrl;
   });
 
+  $('#download-json-link').click(function (e) {
+    var targetUrl;
+    var token;
+    var uid;
+    var workoutId;
+    var downloadInfo;
+    e.preventDefault();
+
+    downloadInfo = $('#pdf-download-info');
+
+    workoutId = downloadInfo.data('workoutId');
+    uid = downloadInfo.data('uid');
+    token = downloadInfo.data('token');
+
+    // Put together and redirect
+    targetUrl = '/' + getCurrentLanguage() +
+      '/workout/' + workoutId + '/json' +
+      '/' + uid +
+      '/' + token;
+    window.location.href = targetUrl;
+  });
+
   // Handle the workout PDF download options for schedules
   $('#download-pdf-button-schedule').click(function (e) {
     var targetUrl;
