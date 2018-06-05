@@ -231,6 +231,12 @@ an appointment for each training day with the appropriate exercises.{% endblockt
             </a>
         </li>
         <li>
+            <a id="download-json-link">
+                <span class="{% fa_class 'download' %}"></span>
+                {% trans "Download as JSON" %}
+            </a>
+        </li>
+        <li>
             <a href="{% url 'manager:log:log' workout.id %}">
                <span class="{% fa_class 'line-chart' %}"></span>
                {% trans "View weight log" %}
