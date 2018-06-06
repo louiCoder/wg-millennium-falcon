@@ -4,7 +4,9 @@
 {% load wger_extras %}
 
 
-{% block title %}{% trans "Edit meal item" %}{% endblock %}
+
+
+{% block title %}{{ title }} {% endblock %}
 
 
 {% block header %}
@@ -25,6 +27,9 @@ $(document).ready(function() {
       class="form-horizontal">
     {% csrf_token %}
     {% render_form_errors form %}
+    {% if plan_pk %}
+    {% render_form_field form.time %}
+    {% endif %}
     {{form.ingredient}}
 
     <div class="form-group {% if field.errors %}has-error{% endif %}" id="form-id_ingredient_searchfield">
@@ -43,6 +48,7 @@ $(document).ready(function() {
     </div>
     {% render_form_field form.amount %}
     {% render_form_field form.weight_unit %}
+    {% render_form_field form.extra_meal %}
     {% render_form_submit submit_text %}
 </form>
 {% endblock %}

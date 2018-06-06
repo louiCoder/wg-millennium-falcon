@@ -109,6 +109,7 @@ function wgerCustomModalInit()
                     <span class="{% fa_class 'pencil-square-o' %}"></span></a>
             </span>
             {% endif %}
+            <br><br><span><strong>Extra meal: &nbsp;</strong>{{item.extra_meal}}</span>
             </td>
             <td class="align-right">{{item.get_nutritional_values.energy|floatformat}}</td>
             <td class="align-right">{{item.get_nutritional_values.protein|floatformat}}</td>
@@ -133,7 +134,7 @@ function wgerCustomModalInit()
 {% empty %}
 {% if is_owner %}
 <p>
-     <a href="{% url 'nutrition:meal:add' plan.id %}"
+     <a href="{% url 'nutrition:meal_item:add_meal' plan.id %}"
         class="wger-modal-dialog btn btn-default btn-block">
             {% trans "No meals for this plan." %}
             {% trans "Add one now." %}
@@ -144,7 +145,7 @@ function wgerCustomModalInit()
         {% if is_owner %}
         <tr>
             <td colspan="6">
-            <a href="{% url 'nutrition:meal:add' plan.id %}"
+            <a href="{% url 'nutrition:meal_item:add_meal' plan.id %}"
                class="wger-modal-dialog">
                 <span class="{% fa_class 'plus' %}"></span>
                 {% trans "Add a new meal" %}
