@@ -109,6 +109,7 @@ function wgerCustomModalInit()
                     <span class="{% fa_class 'pencil-square-o' %}"></span></a>
             </span>
             {% endif %}
+            <br><br><span><strong>Extra meal: &nbsp;</strong>{{ item.extra_meal }}</span>
             </td>
             <td class="align-right">{{item.get_nutritional_values.energy|floatformat}}</td>
             <td class="align-right">{{item.get_nutritional_values.protein|floatformat}}</td>
