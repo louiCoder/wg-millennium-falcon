@@ -15,6 +15,17 @@
 
 {% block content %}
 
+<style>
+    .trainer
+    {
+        visibility: hidden;
+    }
+
+    tr:hover .trainer, tbody tr:hover td .trainer, ul:hover .trainer
+    {
+        visibility: visible;
+    }
+</style>
 
 <h4>{% trans "Administrators and trainers" %}</h4>
 <table class="table table-hover">
@@ -25,6 +36,7 @@
     <th>{% trans "Name" %}</th>
     {% if perms.gym.manage_gym or perms.gym.manage_gyms %}
         <th style="text-align: right;">{% trans "Roles" %}</th>
+        <th></th>
     {% endif %}
 </tr>
 </thead>
@@ -58,6 +70,40 @@
         <a href="{% url 'gym:gym:edit-user-permission' current_user.obj.pk %}" class="btn btn-default btn-xs wger-modal-dialog">
             <span class="{% fa_class 'cog' %}"></span>
         </a>
+    </td>
+
+    <td style="text-align: right;">
+        {% if current_user.perms.gym_trainer and not current_user.perms.manage_gyms and not current_user.perms.manage_gyms %}
+        <div class="btn-group trainer">
+            <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">
+                <span class="{% fa_class 'bars' %}"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                {% if current_user.obj.is_active %}
+                <li>
+                    <a href="{% url 'core:user:deactivate' current_user.obj.pk %}">
+                        <span class="{% fa_class 'exclamation-triangle' %} "></span>
+                        {% trans 'Deactivate' %}
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'core:user:activate' current_user.obj.pk %}">
+                        <span class="{% fa_class 'check' %}"></span>
+                        {% trans 'Activate' %}
+                    </a>
+                </li>
+                {% endif %}
+
+                <li>
+                    <a href="{% url 'core:user:delete' current_user.obj.pk %}">
+                        <span class="{% fa_class 'trash' %}"></span>
+                        {% trans 'Delete' %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
     </td>
     {% endif %}
 </tr>
