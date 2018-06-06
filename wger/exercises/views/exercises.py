@@ -44,7 +44,8 @@ from wger.manager.models import WorkoutLog
 from wger.exercises.models import (
     Exercise,
     Muscle,
-    ExerciseCategory
+    ExerciseCategory,
+    Author
 )
 from wger.utils.generic_views import (
     WgerFormMixin,
@@ -176,6 +177,8 @@ class ExercisesEditAddView(WgerFormMixin):
             muscles_secondary = ModelMultipleChoiceField(queryset=Muscle.objects.all(),
                                                          widget=TranslatedOriginalSelectMultiple(),
                                                          required=False)
+            license_author = ModelChoiceField(queryset=Author.objects.all(),
+                                              widget=TranslatedSelect(), required=False)
 
             class Meta:
                 model = Exercise

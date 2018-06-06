@@ -38,6 +38,7 @@ class MainImageTestCase(WorkoutManagerTestCase):
         image = ExerciseImage()
         image.exercise = exercise
         image.status = ExerciseImage.STATUS_ACCEPTED
+        # image.license_author = 1
         image.image.save(
             filename,
             File(open('wger/exercises/tests/{0}'.format(filename), 'rb'))
@@ -111,7 +112,8 @@ class AddExerciseImageTestCase(WorkoutManagerAddTestCase):
     user_fail = False
     data = {'is_main': True,
             'image': open('wger/exercises/tests/protestschwein.jpg', 'rb'),
-            'license': 1}
+            'license': 1,
+            'license_author': 1}
 
 
 class EditExerciseImageTestCase(WorkoutManagerEditTestCase):
@@ -123,7 +125,8 @@ class EditExerciseImageTestCase(WorkoutManagerEditTestCase):
     url = 'exercise:image:edit'
     pk = 2
     data = {'is_main': True,
-            'license': 1}
+            'license': 1,
+            'license_author': 1}
 
 
 class DeleteExerciseImageTestCase(WorkoutManagerDeleteTestCase):

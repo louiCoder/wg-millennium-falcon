@@ -15,11 +15,14 @@
 # You should have received a copy of the GNU Affero General Public License
 
 from django import forms
-
-from wger.exercises.models import ExerciseImage, ExerciseComment
+from wger.utils.widgets import (TranslatedSelect)
+from wger.exercises.models import ExerciseImage, ExerciseComment, Author
 
 
 class ExerciseImageForm(forms.ModelForm):
+    license_author = forms.ModelChoiceField(queryset=Author.objects.all(),
+                                            widget=TranslatedSelect(), required=False)
+
     class Meta:
         model = ExerciseImage
         fields = ('image',

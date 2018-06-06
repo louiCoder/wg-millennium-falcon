@@ -136,7 +136,7 @@ class ExerciseAcceptTestCase(WorkoutManagerTestCase):
         '''
 
         self.user_login('admin')
-        self.accept()
+        self.accept(fail=False)
 
     def test_accept_user(self):
         '''

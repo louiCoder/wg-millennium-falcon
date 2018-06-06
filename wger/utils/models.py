@@ -75,3 +75,17 @@ class AbstractSubmissionModel(models.Model):
                               default=STATUS_PENDING,
                               editable=False)
     '''Status of the submission, e.g. accepted or declined'''
+
+
+class AbstractExerciseLicenseModel(models.Model):
+    '''
+    Abstract class that adds license information to a model
+    '''
+
+    class Meta:
+        abstract = True
+
+    license = models.ForeignKey(License,
+                                verbose_name=_('License'),
+                                default=2)
+    ''' The item's license '''

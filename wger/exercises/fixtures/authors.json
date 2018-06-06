@@ -1,0 +1,800 @@
+[
+{
+    "model": "exercises.author",
+    "pk": 1,
+    "fields": {
+        "license_author": "2dPREtEZP221u68Akf0JImv5L48"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 2,
+    "fields": {
+        "license_author": "Araaosf"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 3,
+    "fields": {
+        "license_author": "Behrooz"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 4,
+    "fields": {
+        "license_author": "Chippo"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 5,
+    "fields": {
+        "license_author": "Clegg89"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 6,
+    "fields": {
+        "license_author": "Cubeh"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 7,
+    "fields": {
+        "license_author": "Dexter"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 8,
+    "fields": {
+        "license_author": "ExRx"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 9,
+    "fields": {
+        "license_author": "Fergy"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 10,
+    "fields": {
+        "license_author": "Firmeza "
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 11,
+    "fields": {
+        "license_author": "GiglioRosso"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 12,
+    "fields": {
+        "license_author": "GrosseHund"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 13,
+    "fields": {
+        "license_author": "Horal_cz"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 14,
+    "fields": {
+        "license_author": "J120290"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 15,
+    "fields": {
+        "license_author": "James Mackay"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 16,
+    "fields": {
+        "license_author": "JonnFox"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 17,
+    "fields": {
+        "license_author": "Konsumopfer"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 18,
+    "fields": {
+        "license_author": "LOOX"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 19,
+    "fields": {
+        "license_author": "MaddieBeasley"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 20,
+    "fields": {
+        "license_author": "Magenta"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 21,
+    "fields": {
+        "license_author": "Mahoney"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 22,
+    "fields": {
+        "license_author": "Manu, wikipedia"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 23,
+    "fields": {
+        "license_author": "Marius"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 24,
+    "fields": {
+        "license_author": "McMarcel13"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 25,
+    "fields": {
+        "license_author": "Mens Fitness"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 26,
+    "fields": {
+        "license_author": "MrSteele"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 27,
+    "fields": {
+        "license_author": "Naatje"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 28,
+    "fields": {
+        "license_author": "Nallitnas"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 29,
+    "fields": {
+        "license_author": "Nash"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 30,
+    "fields": {
+        "license_author": "OGhTebfCxhexZXuf35mUxV9C--A"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 31,
+    "fields": {
+        "license_author": "OM6oxA3bCOvamJntbRi5S0RCDrQ"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 32,
+    "fields": {
+        "license_author": "Paul.Sichwardt"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 33,
+    "fields": {
+        "license_author": "Photo of machine user information"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 34,
+    "fields": {
+        "license_author": "Robertcoop"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 35,
+    "fields": {
+        "license_author": "Sench0"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 36,
+    "fields": {
+        "license_author": "Susanne Bock"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 37,
+    "fields": {
+        "license_author": "Tetsuhiko Asai"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 38,
+    "fields": {
+        "license_author": "ThisGirl0819"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 39,
+    "fields": {
+        "license_author": "Topi88"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 40,
+    "fields": {
+        "license_author": "Trix"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 41,
+    "fields": {
+        "license_author": "Vl2V2sP42RNfDng1zCSZB7fZqlo"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 42,
+    "fields": {
+        "license_author": "Wikipedia"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 43,
+    "fields": {
+        "license_author": "WrmZ"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 44,
+    "fields": {
+        "license_author": "YYCfit"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 45,
+    "fields": {
+        "license_author": "andikeller"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 46,
+    "fields": {
+        "license_author": "aszc"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 47,
+    "fields": {
+        "license_author": "ataraxie67"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 48,
+    "fields": {
+        "license_author": "aza11"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 49,
+    "fields": {
+        "license_author": "baldurmen"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 50,
+    "fields": {
+        "license_author": "bizyguy"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 51,
+    "fields": {
+        "license_author": "bloody_disgrace"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 52,
+    "fields": {
+        "license_author": "bobbyprince89"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 53,
+    "fields": {
+        "license_author": "cal.zabel"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 54,
+    "fields": {
+        "license_author": "cgoob883"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 55,
+    "fields": {
+        "license_author": "chris"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 56,
+    "fields": {
+        "license_author": "colinp23"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 57,
+    "fields": {
+        "license_author": "deusinvictus"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 58,
+    "fields": {
+        "license_author": "dewian000"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 59,
+    "fields": {
+        "license_author": "djblitzd"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 60,
+    "fields": {
+        "license_author": "dookie1481"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 61,
+    "fields": {
+        "license_author": "drthurlow"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 62,
+    "fields": {
+        "license_author": "ekgdc"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 63,
+    "fields": {
+        "license_author": "er0355"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 64,
+    "fields": {
+        "license_author": "flori"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 65,
+    "fields": {
+        "license_author": "foguinho.peruca"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 66,
+    "fields": {
+        "license_author": "geraldbaeck"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 67,
+    "fields": {
+        "license_author": "hamihamann"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 68,
+    "fields": {
+        "license_author": "http://kulturistika.ronnie.cz/c-17541-zasobnik-cvi"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 69,
+    "fields": {
+        "license_author": "http://workouttrends.com/how-to-do-dumbbell-side-b"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 70,
+    "fields": {
+        "license_author": "http://www.bodybuilding.com/"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 71,
+    "fields": {
+        "license_author": "http://www.bodybuilding.com/exercises/detail/view/"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 72,
+    "fields": {
+        "license_author": "http://www.carinatum.com/"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 73,
+    "fields": {
+        "license_author": "http://www.exrx.net/WeightExercises/Brachialis/DBC"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 74,
+    "fields": {
+        "license_author": "http://www.realsimple.com/health/fitness-exercise/"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 75,
+    "fields": {
+        "license_author": "http://www.wikifit.de"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 76,
+    "fields": {
+        "license_author": "intelman"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 77,
+    "fields": {
+        "license_author": "jigglychipmunk"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 78,
+    "fields": {
+        "license_author": "kclark"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 79,
+    "fields": {
+        "license_author": "klabautermann"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 80,
+    "fields": {
+        "license_author": "koreyhinton"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 81,
+    "fields": {
+        "license_author": "kwrindy"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 82,
+    "fields": {
+        "license_author": "lakerbeezel"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 83,
+    "fields": {
+        "license_author": "lauroernesto"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 84,
+    "fields": {
+        "license_author": "maxamillion1414"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 85,
+    "fields": {
+        "license_author": "mbozi1"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 86,
+    "fields": {
+        "license_author": "mhs_79"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 87,
+    "fields": {
+        "license_author": "miguelaprovencio"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 88,
+    "fields": {
+        "license_author": "minifigmaster125"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 89,
+    "fields": {
+        "license_author": "nate303303"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 90,
+    "fields": {
+        "license_author": "notdefine"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 91,
+    "fields": {
+        "license_author": "novadani"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 92,
+    "fields": {
+        "license_author": "oboema"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 93,
+    "fields": {
+        "license_author": "oliser67"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 94,
+    "fields": {
+        "license_author": "perteus"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 95,
+    "fields": {
+        "license_author": "pjwirth"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 96,
+    "fields": {
+        "license_author": "powerade69"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 97,
+    "fields": {
+        "license_author": "pwiltrout"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 98,
+    "fields": {
+        "license_author": "richmr2174@gmail.com"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 99,
+    "fields": {
+        "license_author": "robhoyt"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 100,
+    "fields": {
+        "license_author": "schmiddytimes"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 101,
+    "fields": {
+        "license_author": "sebk"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 102,
+    "fields": {
+        "license_author": "sevae"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 103,
+    "fields": {
+        "license_author": "silke"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 104,
+    "fields": {
+        "license_author": "sistab2"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 105,
+    "fields": {
+        "license_author": "tanatos"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 106,
+    "fields": {
+        "license_author": "techbearable"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 107,
+    "fields": {
+        "license_author": "tobahl"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 108,
+    "fields": {
+        "license_author": "trzr23"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 109,
+    "fields": {
+        "license_author": "tuckerm"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 110,
+    "fields": {
+        "license_author": "tuninx"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 111,
+    "fields": {
+        "license_author": "vince63"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 112,
+    "fields": {
+        "license_author": "wger.de"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 113,
+    "fields": {
+        "license_author": "woern777"
+    }
+},
+{
+    "model": "exercises.author",
+    "pk": 114,
+    "fields": {
+        "license_author": "\u0432\u0432\u0432"
+    }
+}
+]
