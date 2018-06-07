@@ -271,6 +271,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         description = 'a nice, long and accurate description for the exercise'
         response = self.client.post(reverse('exercise:exercise:add'),
                                     {'category': 2,
+                                     'license_author': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
                                      'description': description,
@@ -286,10 +287,10 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # Exercise was saved
         exercise = Exercise.objects.get(pk=exercise_id)
         if admin:
-            self.assertEqual(exercise.license_author, 'testserver')
+            self.assertEqual(exercise.license_author.license_author, '2dPREtEZP221u68Akf0JImv5L48')
             self.assertEqual(exercise.status, Exercise.STATUS_ACCEPTED)
         else:
-            self.assertEqual(exercise.license_author, 'test')
+            self.assertEqual(exercise.license_author.license_author, '2dPREtEZP221u68Akf0JImv5L48')
             self.assertEqual(exercise.status, Exercise.STATUS_PENDING)
 
         response = self.client.get(reverse('exercise:exercise:view', kwargs={'id': exercise_id}))
@@ -304,6 +305,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # Wrong category - adding
         response = self.client.post(reverse('exercise:exercise:add'),
                                     {'category': 111,
+                                     'license_author': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
                                      'muscles': [1, 2]})
@@ -312,6 +314,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # Wrong category - editing
         response = self.client.post(reverse('exercise:exercise:edit', kwargs={'pk': '1'}),
                                     {'category': 111,
+                                     'license_author': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
                                      'muscles': [1, 2]})
@@ -323,6 +326,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # No muscles - adding
         response = self.client.post(reverse('exercise:exercise:add'),
                                     {'category': 1,
+                                     'license_author': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
                                      'muscles': []})
@@ -331,6 +335,7 @@ class ExercisesTestCase(WorkoutManagerTestCase):
         # No muscles - editing
         response = self.client.post(reverse('exercise:exercise:edit', kwargs={'pk': '1'}),
                                     {'category': 1,
+                                     'license_author': 1,
                                      'name_original': 'my test exercise',
                                      'license': 1,
                                      'muscles': []})

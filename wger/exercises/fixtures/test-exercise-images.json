@@ -3,6 +3,7 @@
         "pk": 1,
         "model": "exercises.exerciseimage",
         "fields": {
+            "license_author": 1,
             "image": "exercise-images/1/protestschwein.jpg",
             "exercise": 1,
             "is_main": true,
@@ -14,6 +15,7 @@
         "pk": 2,
         "model": "exercises.exerciseimage",
         "fields": {
+           "license_author": 2,
             "image": "exercise-images/1/wildschwein.jpg",
             "exercise": 1,
             "is_main": false,
@@ -25,6 +27,7 @@
         "pk": 3,
         "model": "exercises.exerciseimage",
         "fields": {
+           "license_author": 3,
             "image": "exercise-images/1/wildschwein.jpg",
             "exercise": 2,
             "is_main": false,

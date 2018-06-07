@@ -52,6 +52,35 @@
         }
     },
     {
+    "model": "exercises.author",
+    "pk": 1,
+    "fields": {
+        "license_author": "2dPREtEZP221u68Akf0JImv5L48"
+    }
+    },
+    {
+        "model": "exercises.author",
+        "pk": 2,
+        "fields": {
+            "license_author": "Araaosf"
+        }
+    },
+    {
+        "model": "exercises.author",
+        "pk": 3,
+        "fields": {
+            "license_author": "Behrooz"
+        }
+    },
+    {
+        "model": "exercises.author",
+        "pk": 4,
+        "fields": {
+            "license_author": "test"
+        }
+    },
+
+    {
         "pk": 1,
         "model": "exercises.exercise",
         "fields": {
@@ -66,7 +95,8 @@
                 3
             ],
             "description": "",
-            "name": "An exercise"
+            "name": "An exercise",
+           "license_author": 1
         }
     },
     {
@@ -84,7 +114,8 @@
                 3
             ],
             "description": "",
-            "name": "Very cool exercise"
+            "name": "Very cool exercise",
+           "license_author": 2
         }
     },
     {
@@ -98,7 +129,8 @@
                 1
             ],
             "description": "",
-            "name": "Boring exercise"
+            "name": "Boring exercise",
+           "license_author": 1
         }
     },
     {
@@ -112,7 +144,7 @@
                 1
             ],
             "description": "",
-            "license_author": "test",
+            "license_author": 4,
             "name": "Pending exercise"
         }
     },
@@ -128,7 +160,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 3
         }
     },
     {
@@ -143,7 +176,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 3
         }
     },
     {
@@ -158,7 +192,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 1
         }
     },
     {
@@ -173,7 +208,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 2
         }
     },
     {
@@ -188,7 +224,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 2
         }
     },
     {
@@ -203,7 +240,8 @@
             ],
             "muscles_secondary":[],
             "description": "",
-            "name": "Needed for demo user"
+            "name": "Needed for demo user",
+           "license_author": 1
         }
     },
     {
