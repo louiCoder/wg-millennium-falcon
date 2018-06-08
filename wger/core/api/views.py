@@ -19,6 +19,7 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import detail_route
+from rest_framework.permissions import AllowAny
 
 from wger.core.models import (
     UserProfile,
@@ -35,8 +36,22 @@ from wger.core.api.serializers import (
     RepetitionUnitSerializer,
     WeightUnitSerializer
 )
-from wger.core.api.serializers import UserprofileSerializer
+from wger.core.api.serializers import UserprofileSerializer, UserSerializer
 from wger.utils.permissions import UpdateOnlyPermission, WgerPermission
+
+
+class CreateuserViewSet(viewsets.ModelViewSet):
+
+    serializer_class = UserSerializer
+
+    def get_queryset(self):
+        return User.objects.filter(username=self.request.user.username)
+
+    def get_permissions(self):
+        if self.request.method == 'POST':
+            self.permission_classes = (AllowAny,)
+
+        return super(CreateuserViewSet, self).get_permissions()
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
