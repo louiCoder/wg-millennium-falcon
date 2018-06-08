@@ -70,6 +70,35 @@
                placeholder="{% trans 'ingredient name' %}"
                style="width:100%;">
     </form>
+
+<br/>Display ingredients in:
+<button class="btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
+    --select--<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" role="menu"  style="padding-left: 20px;">
+    <li>
+        <a href="{% url 'nutrition:ingredient:list' %}">
+            {% trans "Default" %}
+        </a>
+    </li>
+
+    {% for short_name, full_name in languages %}
+    <li>
+        <img src="/static/images/icons/flag-{{ short_name }}.svg"
+            width="18"
+            height="11"
+            alt="{% trans full_name %}"
+            title="{% trans full_name %}"
+            style="border: 1px solid #151515;">
+
+        <span>
+            <a href="{% url 'nutrition:ingredient:list' %}?language={{ short_name }}">
+                {% trans full_name %}
+            </a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 
