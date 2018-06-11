@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.translation import ugettext_lazy
 from django.views.generic import CreateView, UpdateView
 
-from wger.nutrition.forms import MealItemForm
+from wger.nutrition.forms import MealItemForm, MealItemEditForm
 from wger.nutrition.models import Meal, MealItem, NutritionPlan
 from wger.utils.generic_views import WgerFormMixin
 
@@ -55,6 +55,7 @@ class MealItemCreateView(WgerFormMixin, CreateView):
 
     model = MealItem
     form_class = MealItemForm
+    title = ugettext_lazy('Add meal item')
     template_name = 'meal_item/edit.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -112,7 +113,7 @@ class MealItemEditView(WgerFormMixin, UpdateView):
     '''
 
     model = MealItem
-    form_class = MealItemForm
+    form_class = MealItemEditForm
     title = ugettext_lazy('Edit meal item')
     form_action_urlname = 'nutrition:meal_item:edit'
     template_name = 'meal_item/edit.html'

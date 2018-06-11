@@ -4,13 +4,9 @@
 {% load wger_extras %}
 
 
-{% block title %}
-{% if plan_pk %}
-    {% trans "Add a new meal"  %}
-{% else %}
-    {% trans "Edit meal item" %}
-{% endif %}
-{% endblock %}
+
+
+{% block title %}{{ title }} {% endblock %}
 
 
 {% block header %}
@@ -52,6 +48,7 @@ $(document).ready(function() {
     </div>
     {% render_form_field form.amount %}
     {% render_form_field form.weight_unit %}
+    {% render_form_field form.extra_meal %}
     {% render_form_submit submit_text %}
 </form>
 {% endblock %}

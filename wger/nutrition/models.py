@@ -596,6 +596,7 @@ class MealItem(models.Model):
     time = Html5TimeField(null=True,
                           blank=True,
                           verbose_name=_('Time (approx)'))
+    extra_meal = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         '''

@@ -24,7 +24,22 @@ jobs:
           name: add settings.py
           command: |
             . venv/bin/activate
-            invoke create-settings --database-type postgresql
+            invoke create-settings
+      - run:
+          name: make migrations
+          command: |
+            . venv/bin/activate
+            python manage.py makemigrations
+      - run:
+          name: migrate db
+          command: |
+            . venv/bin/activate
+            invoke migrate-db
+      - run:
+          name: load fixtures
+          command: |
+            . venv/bin/activate
+            invoke load-fixtures
       - run:
           name: test flake8
           command: |
