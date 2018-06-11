@@ -456,10 +456,10 @@ class ExerciseImage(AbstractSubmissionModel, AbstractExerciseLicenseModel, model
                 .filter(is_main=False) \
                 .count():
 
-                image = ExerciseImage.objects.accepted() \
-                    .filter(exercise=self.exercise, is_main=False)[0]
-                image.is_main = True
-                image.save()
+            image = ExerciseImage.objects.accepted() \
+                .filter(exercise=self.exercise, is_main=False)[0]
+            image.is_main = True
+            image.save()
 
     def get_owner_object(self):
         '''

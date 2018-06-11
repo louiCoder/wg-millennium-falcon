@@ -17,13 +17,79 @@
 
 from rest_framework import serializers
 
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+
 from wger.core.models import (
     UserProfile,
     Language,
     DaysOfWeek,
     License,
     RepetitionUnit,
-    WeightUnit)
+    WeightUnit,
+    Apikeyuserprofile)
+
+
+class MainuserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'first_name', 'last_name', 'email')
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    user = MainuserSerializer(required=True, many=False)
+
+    class Meta:
+        model = Apikeyuserprofile
+        fields = ('user', 'key')
+
+    def create(self, validated_data):
+
+        try:
+            validated_data['key']
+            validated_data['user']
+        except KeyError as missing_key:
+            message = "Please supply a " + str(missing_key) + \
+                " and a value"
+            raise serializers.ValidationError(message)
+
+        key = validated_data['key']
+
+        if key == "":
+            message = 'You must provide a value for the api key'
+            raise serializers.ValidationError(message)
+
+        if Token.objects.filter(key=key).exists() is False:
+            raise serializers.ValidationError('Invalid api key supplied')
+
+        validatated_user = validated_data.pop('user')
+
+        username, email, first_name, last_name, password = 0, 0, 0, 0, 0
+
+        for item in validatated_user.items():
+            if item[0] == 'username':
+                username = item[1]
+            if item[0] == 'email':
+                email = item[1]
+            if item[0] == 'first_name':
+                first_name = item[1]
+            if item[0] == 'last_name':
+                last_name = item[1]
+            if item[0] == 'password':
+                password = item[1]
+
+        new_user = User.objects.create_user(
+            username=username,
+            password=password,
+            email=email,
+            first_name=first_name,
+            last_name=last_name,
+        )
+
+        api = Apikeyuserprofile.objects.create(key=key, user=new_user)
+
+        return api
 
 
 class UserprofileSerializer(serializers.ModelSerializer):

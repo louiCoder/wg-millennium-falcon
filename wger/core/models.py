@@ -34,6 +34,21 @@ from wger.weight.models import WeightEntry
 
 
 @python_2_unicode_compatible
+class Apikeyuserprofile(models.Model):
+    """
+    Apikey of a user created using an api endpoint
+    """
+
+    user = models.OneToOneField(
+        User,
+        related_name='status',
+        on_delete=models.CASCADE,
+        primary_key=True)
+
+    key = models.TextField(blank=True)
+
+
+@python_2_unicode_compatible
 class Language(models.Model):
     '''
     Language of an item (exercise, workout, etc.)
