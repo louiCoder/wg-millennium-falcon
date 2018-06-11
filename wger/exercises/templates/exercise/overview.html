@@ -38,7 +38,7 @@ $(document).ready(function() {
 -->
 {% block content %}
 
-{% cache cache_timeout exercise-overview language.id %}
+{% cache 1 exercise-overview language.id %}
 {% regroup exercises by category as exercise_list %}
 <ul class="nav nav-tabs">
     {% for item in exercise_list %}
@@ -107,11 +107,40 @@ $(document).ready(function() {
 -->
 {% block sidebar %}
 <h4>{% trans "Search" %}</h4>
-    <input name="term"
-           type="search"
-           id="exercise-search"
-           class="ajax-form-element form-control"
-           placeholder="{% trans 'exercise name' %}">
+<input name="term"
+        type="search"
+        id="exercise-search"
+        class="ajax-form-element form-control"
+        placeholder="{% trans 'exercise name' %}">
+
+<br/>Display exercises in:
+<button class="btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
+    --select--<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" role="menu"  style="padding-left: 20px;">
+    <li>
+        <a href="{% url 'exercise:exercise:overview' %}">
+            {% trans "Default" %}
+        </a>
+    </li>
+
+    {% for short_name, full_name in languages %}
+    <li>
+        <img src="/static/images/icons/flag-{{ short_name }}.svg"
+            width="18"
+            height="11"
+            alt="{% trans full_name %}"
+            title="{% trans full_name %}"
+            style="border: 1px solid #151515;">
+
+        <span>
+            <a href="{% url 'exercise:exercise:overview' %}?language={{ short_name }}">
+                {% trans full_name %}
+            </a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 
