@@ -9,9 +9,11 @@
 
 {% block header %}
 <script src="{% static 'js/exercises.js' %}"></script>
+<script src="{% static 'js/svg.js' %}"></script>
 
 <script>
 $(document).ready(function() {
+
     //Prefetch the background images
     {% for muscle in muscle_list|first %}
         wgerPrefetchImages(['/static/images/muscles/main/muscle-' + {{muscle.id}} + '.svg']);
@@ -19,16 +21,74 @@ $(document).ready(function() {
     wgerPrefetchImages(['/static/images/muscles/muscular_system_back.svg']);
 
 
+
+    $('#muscle-systems').append(front_muscles);
+    $('#muscle-systems').append(back_muscles);
+
     // Hightlight the first element
     wgerHighlightMuscle($('.muscle').first());
+
+
 
     // Highlight on hover
     $('.muscle').hover(function(e) {
         e.preventDefault();
         wgerHighlightMuscle(this);
+
+        //load front muscles if front
+        var is_front = $(this).data('isFront');
+          if(is_front === 'True'){
+
+            $('#svg-front').css("display", "block");
+            $('#svg-back').css("display", "none");
+
+          }else{
+
+              $('#svg-front').css("display", "none");
+            $('#svg-back').css("display", "block");
+          }
+
+
     });
 
-    // Highlight on click
+
+
+
+
+    // Highlight on hover
+     $("path").hover(function(e) {
+        e.preventDefault();
+
+        var muscle_id =  e.target.getAttribute("muscle");
+
+          var m = 'muscle-'+ muscle_id;
+          var element = $("li[data-target="+ m +"]");
+
+
+
+              // .closest( "ul" );
+          var is_front = ($(this).closest('svg').attr('id') === 'svg-front') ? 'front' : 'back';
+
+         // Highlight selected muscle
+         $('#muscle-system').css('background-image',
+            'url(/static/images/muscles/main/muscle-' + muscle_id + '.svg),' +
+            'url(/static/images/muscles/muscular_system_' + is_front + '.svg)');
+
+         // Reset all other highlighted muscles
+          muscle = $('.muscle');
+          muscle.removeClass('muscle-active');
+          muscle.addClass('muscle-inactive');
+
+          // Highlight the current one
+          element.removeClass('muscle-inactive');
+          element.addClass('muscle-active');
+
+         // Show the corresponding exercises
+          $('.exercise-list').hide();
+          $('#' + m).show();
+    });
+
+
 
 });
 </script>
@@ -48,8 +108,15 @@ $(document).ready(function() {
         <div id="muscle-system"
              class="muscle-background"
              style="background-image: url('/static/images/muscles/muscular_system_front.svg');">
+            <div id="muscle-systems" class="muscle-background" >
         </div>
+
+
+
+        </div>
+
     </div>
+
     <div class="col-sm-4 col-xs-6">
         {# Why do we need to use |first? #}
         {% regroup muscle_list|first by is_front as muscle_group %}
