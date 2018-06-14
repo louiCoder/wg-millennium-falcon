@@ -336,7 +336,7 @@ class UserDeactivateView(LoginRequiredMixin,
         edit_user = get_object_or_404(User, pk=pk)
         edit_user.is_active = False
         edit_user.save()
-        messages.success(self.request, _('The user was successfully deactivated'))
+        messages.success(self.request, _('The user was successfully deactivated'), 'danger')
         return reverse('core:user:overview', kwargs=({'pk': pk}))
 
 
