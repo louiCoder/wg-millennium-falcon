@@ -298,6 +298,34 @@ function modalDialogFormEdit() {
       }
     });
   });
+
+  //drop sets checkbox on change event handler.
+  $("#drops").on('click', function() {
+    
+    if (jQuery("#drops").is(":checked")) {
+      // to disable amount inputs
+      $('#formsets').find('[id*="reps"]').prop('disabled', true);
+      //reset amount values to zero
+      $('input[id*="reps"]').val(0);
+      // select until failure by default for repetition units
+      $('select[id*="repetition_unit"]').val('2');
+      // disable repetition units
+      $('select[id*="repetition_unit"]').prop('disabled', true);
+
+    }else{
+      //enable amount inputs
+      $('#formsets').find('[id*="reps"]').prop('disabled', false);
+      //reset amount values to nothing.
+      $('input[id*="reps"]').val("");
+      // reset repetition units back to repetitions.
+      $('select[id*="repetition_unit"]').val('1');
+      // disable repetition units
+      $('select[id*="repetition_unit"]').prop('disabled', false);
+      $('#drops').prop('checked', false);
+    }
+    
+
+  });
 }
 
 function wgerFormModalDialog() {
@@ -452,6 +480,15 @@ function updateAllExerciseFormset() {
             $formsets.append(data);
             $('#exercise-search-log').scrollTop(0);
             $formsets.trigger('create');
+            
+            // code below acts in favor if dropsets is checked.
+            $('#formsets').find('[id*="reps"]').prop('disabled', true);
+            //reset amount values to zero
+            $('input[id*="reps"]').val(0);
+            // select until failure by default for repetition units
+            $('select[id*="repetition_unit"]').val('2');
+            // disable repetition units
+            $('select[id*="repetition_unit"]').prop('disabled', true);
           }).promise();
         });
       }
